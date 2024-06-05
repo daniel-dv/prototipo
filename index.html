@@ -37,7 +37,10 @@
                         <p class="text-danger">Pago pendiente</p>
                         <p>Precio reserva: $125630</p>
                         <p class="text-muted">Impuestos: $26382.30</p>
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Cancelar reserva</button>
+                        <button id="cancelButton" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal" onclick="cancelarReservacion()">Cancelar reserva</button>
+                        <div id="cancelSuccess" class="alert alert-success text-center mt-3" role="alert" style="display: none;">
+                            Reserva #123456 cancelada!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,5 +65,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function cancelarReservacion() {
+            document.getElementById('cancelButton').style.display = 'none';
+            document.getElementById('cancelSuccess').style.display = 'block';
+            $('#cancelModal').modal('show');
+        }
+    </script>
 </body>
 </html>
